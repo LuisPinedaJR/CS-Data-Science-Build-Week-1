@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+  <!--<![endif]-->
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Conway's Game of Life in HTML5 Canvas</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <canvas id="canvas" width="510" height="510"></canvas>
+
+    <form>
+      <div>
+        <label for="pattern">Choose a pattern:</label>
+        <label for="speed" style="margin-left:58px">Speed:</label>
+      </div>
+
+      <div id="controls" style="display:flex; width: 510">
+        <select name="pattern" id="pattern">
+          <option value="select">Select Pattern</option>
+          <option value="random">Random</option>
+          <option value="blank">Blank</option>
+          <option value="glider">Glider</option>
+          <option value="lwss">Light-weight spaceship</option>
+          <option value="mwss">Middle-weight spaceship</option>
+          <option value="hwss">Heavy-weight spaceship</option>
+          <option value="gosper">Gosper glider gun</option>
+          <option value="simkin">Simkin glider gun</option>
+          <option value="pulsar">Pulsar</option>
+          <option value="penta">Penta-decathlon</option>
+          <option value="beacon">Beacon</option>
+          <option value="toad">Toad</option>
+        </select>
+
+        <select name="speed" id="speed" style="margin-left: 5px;">
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5" selected>5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+        </select>
+
+        <button id="start" type="button" style="margin-left: 5px">Start</button>
+        <button id="stop" type="button" style="margin-left: 5px">Stop</button>
+        <button id="clear" type="button" style="margin-left: 5px">Clear</button>
+
+        <span style="margin-left: 50px;">Generation: </span
+        ><span id="count" style="margin-left: 4px;">0</span>
+      </div>
+    </form>
+    <p>
+      Note, the game board is actually 75x75 tiles, but only 51x51 tiles are
+      displayed.
+    </p>
+    <p>
+      <a
+        target="_blank"
+        href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life"
+        >Conway's Game of Life</a
+      >
+    </p>
+
+    <script src="./game.js" async></script>
+  </body>
+</html>
